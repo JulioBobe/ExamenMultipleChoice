@@ -10,7 +10,7 @@ class Pregunta {
     protected $agregar;
     protected $opciones=[];
     protected $enunciado;
-
+    protected $bandera;
     public function __construct($items){
         $this->items= $items;
         $this->correctas = $this->items["respuestas_correctas"];
@@ -56,6 +56,10 @@ class Pregunta {
 
     public function mezclarOpciones(){
         return shuffle($this->opciones);
+    }
+
+    public function obtenerCorrectas(){
+        return $this->correctas;
     }
 
     public function obtenerEnunciado(){
